@@ -38,7 +38,6 @@ public class QuickSort implements Sort {
 				j--;
 			}
 		}
-		
 		if (low < j) {
 			quickSort(array, low, j);
 		}		

@@ -7,14 +7,15 @@ import java.util.*;
  * same oId they will be sorted according to vId ascending.
  */
 public class JavaAPISort {
-	/**
-	 * Sort a List of SpeciesId. The list will be sorted according to oId descending. If species have the
-	 * same oId they will be sorted according to vId ascending.
-	 * @param s the original list
-	 * @return sorted list
-	 */
-	public List<SpeciesId> sort(List<SpeciesId> s) {
-		//TODO: Add implementation
-		return null;
-	}
+    /**
+     * Sort a List of SpeciesId. The list will be sorted according to oId descending. If species have the
+     * same oId they will be sorted according to vId ascending.
+     * @param s the original list
+     * @return sorted list
+     */
+    public List<SpeciesId> sort(List<SpeciesId> s) {
+        s.sort(Comparator.comparing(SpeciesId::getOId, Comparator.reverseOrder())
+                .thenComparing(SpeciesId::getVId));
+        return s;
+    }
 }
